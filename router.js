@@ -208,4 +208,127 @@ router.post('/', authMiddleware, async (req, res) => {
     }
 });
 
+/**
+ * @swagger
+ * /potions/{id}:
+ *   post:
+ *     summary: Modifier une potion (via POST)
+ *     tags: [Potions]
+ *     security:
+ *       - cookieAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID de la potion à modifier
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             description: Champs de la potion à modifier (partiels ou complets)
+ *     responses:
+ *       200:
+ *         description: Potion mise à jour avec succès
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Potion'
+ *       404:
+ *         description: Potion non trouvée
+ *       500:
+ *         description: Erreur serveur
+ */
+router.post('/:id', authMiddleware, async (req, res) => {
+    try {
+      const updatedPotion = await Potion.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true } // retourne la potion mise à jour
+      );
+  
+      if (!updatedPotion) {
+        return res.status(404).json({ error: 'Potion non trouvée' });
+      }
+  
+      res.json(updatedPotion);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  /**
+ * @swagger
+ * /potions/{id}:
+ *   delete:
+ *     summary: Supprimer une potion
+ *     tags: [Potions]
+ *     security:
+ *       - cookieAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: ID de la potion à supprimer
+ *     responses:
+ *       200:
+ *         description: Potion supprimée
+ *       404:
+ *         description: Potion non trouvée
+ *       500:
+ *         description: Erreur serveur
+ */
+router.delete('/:id', authMiddleware, async (req, res) => {
+    try {
+      const deleted = await Potion.findByIdAndDelete(req.params.id);
+      if (!deleted) return res.status(404).json({ error: "Potion non trouvée" });
+      res.json({ message: 'Potion supprimée' });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  /**
+ * @swagger
+ * /potions/{id}:
+ *   get:
+ *     summary: Récupérer une potion par son ID
+ *     tags: [Potions]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID de la potion à récupérer
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Détails de la potion
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Potion'
+ *       404:
+ *         description: Potion non trouvée
+ *       500:
+ *         description: Erreur serveur
+ */
+router.get('/:id', async (req, res) => {
+    try {
+      const potion = await Potion.findById(req.params.id);
+      if (!potion) {
+        return res.status(404).json({ error: 'Potion non trouvée' });
+      }
+      res.json(potion);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+  
+
 module.exports = router;

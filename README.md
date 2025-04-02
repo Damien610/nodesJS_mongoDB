@@ -6,11 +6,9 @@ Une API magique pour gérer des potions et l’authentification utilisateur avec
 
 ## 🚀 Lancer le projet
 
-### 1. Cloner le projet
+### 1. Installation et démarage du docker 
 
 ```bash
-git clone https://github.com/tonrepo/api-potions.git
-cd api-potions
 
 # Installe nodemon globalement pour le dev
 npm install -g nodemon

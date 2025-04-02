@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongodb
+      - MONGO_INITDB_ROOT_PASSWORD=mongodb
+    command: mongod --bind_ip_all --logpath /dev/stdout --logappend
+    volumes:
+      - ./db:/data/db

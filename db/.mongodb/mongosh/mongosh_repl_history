@@ -1,0 +1,512 @@
+db.potions.find()
+db.vendors.find()
+db.vendor.find()
+])
+  { $match: { "ratings.strength": { $gt: 5 } } }
+db.potions.aggregate([
+])
+  }}
+    averageIngredients: { $avg: "$ingredientCount" }
+    _id: null,
+  { $group: {
+  { $project: { ingredientCount: { $size: "$ingredients" } } },
+db.potions.aggregate([
+])
+  { $sort: { count: -1 } }
+  { $group: { _id: "$categories", count: { $sum: 1 } } },
+  { $unwind: "$categories" },
+db.potions.aggregate([
+])
+  { $limit: 1 }
+  { $sort: { price: -1 } },
+db.potions.aggregate([
+])
+  }}
+    averageScore: { $avg: "$score" }
+    _id: "$vendor_id",
+  { $group: {
+db.potions.aggregate([
+])
+  { $count: "totalIngredientsDistincts" }
+  { $group: { _id: "$ingredients" } },
+  { $unwind: "$ingredients" },
+db.potions.aggregate([
+docker cp movies.json mongodb:/movies.json
+mongoimport --db esgi --collection movies --file movies.json
+mongoimport --db esgi --collection movies --file movies.json --username mongodb --password mongodb --authenticationDatabase admin
+mongoimport --db esgi --collection movies --file movies.json
+mongoimport esgi --collection movies --file movies.json
+mongoimport -db esgi --collection movies --file movies.json
+mongoimport --db esgi --collection movies --file movies.json
+])
+  { $count: "nombre_de_categories" }  
+  { $group: { _id: "$categories" } },  
+  { $unwind: "$categories" }, 
+db.potions.aggregate([
+  { $count: "nombre_de_categories" }  
+  { $group: { _id: "$categories" } },  
+  { $unwind: "$categories" }, 
+db.movies.aggregate([
+db.movies.find()
+])
+  { $count: "nombre_de_categories" }  
+  { $group: { _id: "$categories" } },  
+  { $unwind: "$categories" }, 
+db.movies.aggregate([
+db.potions.find()
+])
+  { $count: "nombre_de_genres" }  
+  { $group: { _id: "$genres" } },  
+  { $unwind: "$genres" }, 
+db.movies.aggregate([
+  { $count: "nombre_de_genres" }  // Compte le nombre de genres distincts
+  { $group: { _id: "$genres" } },  // Regroupe par genre unique
+  { $unwind: "$genres" },  // Sépare les genres qui sont dans des tableaux
+db.movies.aggregate([
+])
+  { $count: "nombre_de_genres" }  // Compte le nombre de genres distincts
+  { $group: { _id: "$genres" } },  // Regroupe par genre unique
+  { $unwind: "$genres" },  // Sépare les genres qui sont dans des tableaux
+db.movies.aggregate([
+])
+   { $limit: 3}
+   { $sort: {"avg_score": -1}},
+   { $group: {"_id": "$vendor_id", "count": {$sum: 1}, "avg_score": {$avg: "$score"}}},
+   { $project: {"_id": false, "vendor_id": true, "score": true}},
+   { $match: {"score": {$gte:50} }}, 
+db.potions.aggregate([
+db.potions.aggregate([{$group: {"_id": "$vendor_id", "max_price": {$max: "$price"}, "min_price": {$min: "$price"}}}])
+db.potions.aggregate([{$group: {"_id": "$vendor_id", "total": {$sum: 1}, "avg_price": {$avg: "$price"}}}])
+db.potions.aggregate([{$group: {"_id": "$vendor_id", "total": {$sum: 1}}}])
+db.potions.aggregate([{$group: {"_id": "$vendor_id"}}])
+db.vendors.find()
+db.potions.find()
+db.vendors.find()
+db.vendor.drop()
+db.vendors.find()
+db.vendor.find()
+])
+  }
+    }
+      phone: "+353 1 234 5678"
+      email: "hello@leprechaun.pots",
+    contact: {
+    reputation: 4.7,
+    specialty: "Fairy & Luck Potions",
+    country: "Ireland",
+    name: "Leprechaun",
+    _id: "Leprechaun",
+  {
+  },
+    }
+      phone: "+81 90 1234 5678"
+      email: "support@mysticwaters.jp",
+    contact: {
+    reputation: 4.2,
+    specialty: "Water-based Elixirs",
+    country: "Japan",
+    name: "Mystic Waters",
+    _id: "Mystic Waters",
+  {
+  },
+    }
+      phone: "+1 555 789 123"
+      email: "contact@draconicipa.com",
+    contact: {
+    reputation: 4.8,
+    specialty: "Fire & Power Potions",
+    country: "USA",
+    name: "Draconic IPA",
+    _id: "Draconic IPA",
+  {
+  },
+    }
+      phone: "+44 123 456 789"
+      email: "info@kettlecooked.magic",
+    contact: {
+    reputation: 4.5,
+    specialty: "Stealth Potions",
+    country: "UK",
+    name: "Kettlecooked",
+    _id: "Kettlecooked",
+  {
+db.vendors.insertMany([
+db.vendor.find()
+db.potions.find()
+])
+  }
+    vendor_id: "Mystic Waters"
+    tryDate: new Date("2025-04-01"),
+    count: 4,
+    score: 60,
+    price: 15.99,
+    ratings: { strength: 5, flavor: 3 },
+    categories: ["utility", "common"],
+    ingredients: ["air blossom", "ether dust"],
+    name: "Levitation",
+  {
+  },
+    vendor_id: "Draconic IPA"
+    tryDate: new Date("2025-04-01"),
+    count: 1,
+    score: 98,
+    price: 120.0,
+    ratings: { strength: 9, flavor: 1 },
+    categories: ["instant", "legendary"],
+    ingredients: ["phoenix feather", "blink root"],
+    name: "Teleportation",
+  {
+  },
+    vendor_id: "Kettlecooked"
+    tryDate: new Date("2025-04-01"),
+    count: 2,
+    score: 76,
+    price: 35.0,
+    ratings: { strength: 3, flavor: 2 },
+    categories: ["stealth", "rare"],
+    ingredients: ["ghost dust", "moonlight essence"],
+    name: "Invisibility",
+  {
+db.potions.insertMany([
+  ]
+      }
+         "vendor_id": "Leprechaun"
+         "price": 59.99, 
+         "score": 100,
+         "ratings": { "strength": 8, "flavor": 5 },
+         "categories": ["fairy"],
+         "ingredients": ["water", "Leprechaun's hair"],
+         "name": "Luck", 
+      {
+      },
+         "vendor_id": "Leprechaun"
+         "price": 7.99,
+         "score": 45,
+         "ratings": { "strength": 1, "flavor": 4 },
+         "categories": ["fairy"],
+         "ingredients": ["lavender", "sandman’s dust"],
+         "name": "Sleep",
+      {
+      },
+         "vendor_id": "Draconic IPA"
+         "price": 12.99,
+         "score": 85,
+         "ratings": { "strength": 10, "flavor": 3 },
+         "categories": ["effective", "budget"],
+         "ingredients": ["minotaur blood", "raw protein essence"],
+         "name": "Strength",
+      {
+      },
+         "vendor_id": "Mystic Waters"
+         "price": 20.0,
+         "score": 10,
+         "ratings": { "strength": 1, "flavor": 5 },
+         "categories": ["rare"],
+         "ingredients": ["mermaid scale", "lotus nectar"],
+         "name": "Water Walking",
+      {
+      },
+         "vendor_id": "Draconic IPA"
+         "score": 90,
+         "price": 45.99,
+         "ratings": { "strength": 5, "flavor": 1 },
+         "categories": ["dangerous", "premium"],
+         "ingredients": ["dragon scale powder", "spicy chili essence"],
+         "name": "Fire Breath",
+      {
+      },
+         "vendor_id": "Mystic Waters"
+         "score": 50,
+         "price": 25.5,
+         "ratings": { "strength": 2, "flavor": 1 },
+         "categories": ["effective", "premium"],
+         "ingredients": ["ginseng", "unicorn tear"],
+         "name": "Healing",
+      {
+   [
+db.potions.insertMany(
+)
+  ]
+      }
+         "vendor_id": "Leprechaun"
+         "price": 59.99, 
+         "score": 100,
+         "ratings": { "strength": 8, "flavor": 5 },
+         "categories": ["fairy"],
+         "ingredients": ["water", "Leprechaun's hair"],
+         "name": "Luck", 
+      {
+      },
+         "vendor_id": "Leprechaun"
+         "price": 7.99,
+         "score": 45,
+         "ratings": { "strength": 1, "flavor": 4 },
+         "categories": ["fairy"],
+         "ingredients": ["lavender", "sandman’s dust"],
+         "name": "Sleep",
+      {
+      },
+         "vendor_id": "Draconic IPA"
+         "price": 12.99,
+         "score": 85,
+         "ratings": { "strength": 10, "flavor": 3 },
+         "categories": ["effective", "budget"],
+         "ingredients": ["minotaur blood", "raw protein essence"],
+         "name": "Strength",
+      {
+      },
+         "vendor_id": "Mystic Waters"
+         "price": 20.0,
+         "score": 10,
+         "ratings": { "strength": 1, "flavor": 5 },
+         "categories": ["rare"],
+         "ingredients": ["mermaid scale", "lotus nectar"],
+         "name": "Water Walking",
+      {
+      },
+         "vendor_id": "Draconic IPA"
+         "score": 90,
+         "price": 45.99,
+         "ratings": { "strength": 5, "flavor": 1 },
+         "categories": ["dangerous", "premium"],
+         "ingredients": ["dragon scale powder", "spicy chili essence"],
+         "name": "Fire Breath",
+      {
+      },
+         "vendor_id": "Mystic Waters"
+         "score": 50,
+         "price": 25.5,
+         "ratings": { "strength": 2, "flavor": 1 },
+         "categories": ["effective", "premium"],
+         "ingredients": ["ginseng", "unicorn tear"],
+         "name": "Healing",
+      {
+   [
+db.potions.insertMany(
+db.potions.drop()
+db.potions.find()
+)
+  ]
+      }
+         "vendor_id": "Leprechaun"
+         "price": 59.99, 
+         "score": 100,
+         "ratings": { "strength": 8, "flavor": 5 },
+         "categories": ["fairy"],
+         "ingredients": ["water", "Leprechaun's hair"],
+         "name": "Luck", 
+      {
+      },
+         "vendor_id": "Leprechaun"
+         "price": 7.99,
+         "score": 45,
+         "ratings": { "strength": 1, "flavor": 4 },
+         "categories": ["fairy"],
+         "ingredients": ["lavender", "sandman’s dust"],
+         "name": "Sleep",
+      {
+      },
+         "vendor_id": "Draconic IPA"
+         "price": 12.99,
+         "score": 85,
+         "ratings": { "strength": 10, "flavor": 3 },
+         "categories": ["effective", "budget"],
+         "ingredients": ["minotaur blood", "raw protein essence"],
+         "name": "Strength",
+      {
+      },
+         "vendor_id": "Mystic Waters"
+         "price": 20.0,
+         "score": 10,
+         "ratings": { "strength": 1, "flavor": 5 },
+         "categories": ["rare"],
+         "ingredients": ["mermaid scale", "lotus nectar"],
+         "name": "Water Walking",
+      {
+      },
+         "vendor_id": "Draconic IPA"
+         "score": 90,
+         "price": 45.99,
+         "ratings": { "strength": 5, "flavor": 1 },
+         "categories": ["dangerous", "premium"],
+         "ingredients": ["dragon scale powder", "spicy chili essence"],
+         "name": "Fire Breath",
+      {
+      },
+         "vendor_id": "Mystic Waters"
+         "score": 50,
+         "price": 25.5,
+         "ratings": { "strength": 2, "flavor": 1 },
+         "categories": ["effective", "premium"],
+         "ingredients": ["ginseng", "unicorn tear"],
+         "name": "Healing",
+      {
+   [
+db.potions.insertMany(
+db.vendors.insertMany([{ "_id": "Mystic Waters", "organic": true }, { "_id": "Draconic IPA", "organic": false }])
+db.potions.updateMany({"vendor.name": "Brewers"}, {$set: {"vendor_id" : "Brewers"}, $unset: {"vendor":""}})
+db.potions.updateMany({"vendor.name": "Kettlecooked"}, {$set: {"vendor_id" : "Kettlecooked"}, $unset: {"vendor":""}})
+db.vendors.insertMany([{"_id": "Kettlecooked", "organic":  true}, {"_id": "Brewers", "organic": false}, {"_id": "Leprechaun", "organic": true}])
+db.potions.updateOne({"name": "Invisibility"}, {$set: {"vendor" : {"name": "Kettlecooked", "organic":  false}}})
+db.potions.updateMany({"vendor": "Brewers"}, {$set: {"vendor" : {"name": "Brewers", "organic": false}}})
+db.potions.updateMany({"vendor": "Brewers"}, {$set: {"vendor" : {"name": "Brewers", "organic": false}})
+db.potions.updateMany({"vendor.name": "Kettlecooked"}, {$set: {"vendor_id" : "Kettlecooked"}})
+db.potions.updateMany({"vendor.name": "Kettlecooked"}, {$set: {"vendor_id" : "Kettlecooked"}}})
+db.potions.find().sort({"price": -1}).limit(2)
+db.potions.find().sort({"price": -1})
+db.potions.find().sort({"price": 1})
+db.potions.find({"price": {$lt: 20}}, {"ratings": false, "_id": false})
+db.potions.find({"price": {$lt: 10}}, {"ratings": false, "_id": false})
+db.potions.find({"vendor": {$ne: "Brewers"}})
+db.potions.find({"price": {$gt: 10}})
+db.potions.find({"price": {$lt: 10}})
+db.potions.updateMany({}, { $addToSet: { "price": 10 }})
+js
+db.potions.find({"price": {$lt: 10}})
+js
+db.potions.find()
+db.potions.updateMany({}, { $addToSet: { "categories": "budget" }})
+db.potions.updateOne({"name": "Invisibility"}, { $push: { "categories": "budget" }})
+db.potions.updateOne({"name": "Invisibility"}, { $pull: { "categories": "budget" }})
+db.potions.find({"name": "Invisibility"})
+db.potions.updateOne({"name": "Invisibility"}, { $push: { "categories": "budget" }})
+db.potions.updateOne({"name": "Invisibility"}, { $pop: { "categories": 1 }})
+db.potions.updateMany({"ingredients": "secret"}, { $set: { "ingredients.$": 42 }})
+db.potions.find({"name": "Invisibility"})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ingredients.1": "secret" }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ingredients": ["newt toes", 42, "laughter"] }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ingredients": "secret" }})
+db.potions.updateMany({},{ $rename: {"category": "categories"}})
+db.potions.updateMany({},{ $unset: {"color"}})
+]);
+  }
+    "count": 10
+    "ratings": { "strength": 5, "flavor": 4 },
+    "color": "red",
+    "ingredients": ["dragon scale", "chili extract"],
+    "tryDate": new Date("2025-05-30"),
+    "vendor": "Dragonlabs",
+    "name": "Fire Breath",
+  {
+  },
+    "count": 3
+    "ratings": { "strength": 5, "flavor": 3 },
+    "color": "light blue",
+    "ingredients": ["feather", "cloud vapor"],
+    "tryDate": new Date("2025-03-10"),
+    "vendor": "Skybrew",
+    "name": "Levitation",
+  {
+  },
+    "count": 8
+    "ratings": { "strength": 4, "flavor": 2 },
+    "color": "purple",
+    "ingredients": ["mini mushroom", "pixie dust"],
+    "tryDate": new Date("2025-01-10"),
+    "vendor": "Kettlecooked",
+    "name": "Shrinking",
+  {
+  },
+    "count": 12
+    "ratings": { "strength": 2, "flavor": 5 },
+    "color": "pink",
+    "ingredients": ["rose petals", "cherry essence", "sugar"],
+    "tryDate": new Date("2025-02-14"),
+    "vendor": "Brewers",
+    "name": "Love",
+  {
+  },
+    "count": 5
+    "ratings": { "strength": 3, "flavor": 1 },
+    "color": "transparent",
+    "ingredients": ["bat wing", "fog essence", 42],
+    "tryDate": new Date("2025-04-01"),
+    "vendor": "Kettlecooked",
+    "name": "Invisibility",
+  {
+db.potions.insertMany([
+db.potions.deleteMany({"ratings.flavor":5})
+db.potions.deleteOne({"name": "Love"})
+db.potions.find({"ratings.flavor":5})
+db.potions.find({"ingredients":42})
+db.potions.updateOne({"name": "Invisibility"}, { $inc: { "count": 1 }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ratings.strength": 1 } }})
+db.potions.find({"name": "Invisibility"})
+db.potions.find()({"name": "Invisibility"})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ratings.strength": 1 } }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ratings": {"strength": 2, "flavor": 5} }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ingredients": ["newt toes", 42, "laughter"], "category": ["tasty", "effective"] }})
+db.potions.updateMany({"name": "Invisibility"}, { $set: { "tryDate": new Date() }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "tryDate": new Date(2025,4,1) }})
+db.potions.updateMany({}, { $set: { "ingredients": [] }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "color": "bleu", "price": 10.99, "score": 59, "count": 1 }})
+db.potions.find().count()
+db.potions.find({"name": { $regex: "in", $options: "i"}})
+db.potions.find({"name": { $regex: "in" }})
+db.potions.find({"vendor": "Kettlecooked"})
+db.potions.find({"name": "Invisibility"}, {"name": true})
+db.potions.find({"name": "Invisibility"})
+db.potions.find()
+db.potions.insertMany([{"name": "Love", "vendor": "Brewers"}, {"name": "Shrinking", "vendor": "Kettlecooked"}])
+db.potions.insertOne({"name": "Invisibility", "vendor": "Kettlecooked"})
+mongosh
+mongoimport --db esgi --collection movies --file movies.json
+db.heroes.insertMany([{"FirstName": "Bruce", "LastName": "Wayne", "Email": "bwayne@Wayneenterprises.com"},{"FirstName": "Tony", "LastName": "Stark", "Email": "stronger@avengers.com"}])
+db.createCollection('movies')
+db.heroes.drop()
+db.movies.drop()
+db.potions.drop()
+db.potions.find({"name": "Invisibility"})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ingredients.1": "secret" }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ingredients": ["newt toes", 42, "laughter"] }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ingredients": "secret" }})
+db.potions.countDocuments({ categories: "effective" })
+db.potions.updateMany({},{ $rename: {"category": "categories"}})
+db.potions.updateMany({},{ $unset: {"color"}})
+db.potions.deleteMany({"ratings.flavor":5})
+db.potions.deleteOne({"name": "Love"})
+db.potions.find({"ratings.flavor":5})
+db.potions.find({"ingredients":42})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ratings.strength": 1 } }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ratings": {"strength": 2, "flavor": 5} }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "ingredients": ["newt toes", 42, "laughter"], "category": ["tasty", "effective"] }})
+db.potions.updateMany({"name": "Invisibility"}, { $set: { "tryDate": new Date() }})
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "tryDate": new Date(2025,4,1) }})
+db.potions.updateMany({}, { $set: { "ingredients": [] } })
+db.potions.updateOne({"name": "Invisibility"}, { $set: { "color": "bleu", "price": 10.99, "scre": 59, "count": 1 }})
+db.potions.find().count()db.potions.updateOne({"name": "Invisibility"}, { $set: { "color": "bleu", "price": 10.99, "scre": 59, "count": 1 }})
+db.potions.find().count()db.potions.updateOne({"name": "Invisibility"}, { $set: { "color": "bleu", "price": 10.99, "score": 59, "count": 1 }})
+db.potions.find().count()
+db.potions.find()
+db.potions.find({"name": "Invisibility"}, {"name": true})
+db.potions.find({"name": "Invisibility"})
+db.potions.find()
+db.potions.insertMany([{ "name": "Love", "vendor": "Brewers" }, { "name": "Shrinking", "vendor": "Kettlecooked" }])
+db.potions.insertOne({"name": "Invisibility", "vendor": "Kettlecooked"})
+js
+show collections
+db.heroes.insertMany([{"FirstName": "Bruce", "LastName": "Wayne", "Email": "bwayne@Wayneenterprises.com"},{"FirstName": "Tony", "LastName": "Stark", "Email": "stronger@avengers.com"}])
+show collections
+use esgi
+exit
+mongoimport --db esgi --collection movies --file movies.json
+use esgi
+mongoimport --db esgi --collection movies --file movies.json
+exit
+db.heroes.find()
+db.heroes.drop()
+db.heroes.find()
+db.heroes.insertMany([{"FirstName": "Bruce", "LastName": "Wayne", "Email": "bwayne@Wayneenterprises.com"},{"FirstName": "Tony", "LastName": "Stark", "Email": "stronger@avengers.com"}])
+db.createCollection('movies')
+db
+show dbdb
+show db
+show collections
+mongosh
+mongoimport --db esgi --collection movies --file movies.json
+exit
+db.heroes.drop()
+db.heroes.find()
+db.heroes.insertMany([{"FirstName": "Bruce", "LastName": "Wayne", "Email": "bwayne@Wayneenterprises.com"},{"FirstName": "Tony", "LastName": "Stark", "Email": "stronger@avengers.com"}])
+db.createCollection('movies')
+use esgi

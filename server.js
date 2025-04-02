@@ -42,8 +42,58 @@ const swaggerOptions = {
           in: 'cookie',
           name: 'demo_node+mongo_token'
         }
+      },
+      schemas: {
+        Potion: {
+          type: 'object',
+          properties: {
+            _id: {
+              type: 'string',
+              example: '660bcf5fca6e9f06b8a2eecd'
+            },
+            name: {
+              type: 'string',
+              example: 'Potion de soin ultime'
+            },
+            price: {
+              type: 'number',
+              example: 99.99
+            },
+            score: {
+              type: 'number',
+              example: 5
+            },
+            ingredients: {
+              type: 'array',
+              items: { type: 'string' },
+              example: ['larmes de phénix', 'poussière de fée']
+            },
+            ratings: {
+              type: 'object',
+              properties: {
+                strength: { type: 'number', example: 4 },
+                flavor: { type: 'number', example: 3 }
+              }
+            },
+            tryDate: {
+              type: 'string',
+              format: 'date',
+              example: '2025-04-02'
+            },
+            categories: {
+              type: 'array',
+              items: { type: 'string' },
+              example: ['soin', 'rare']
+            },
+            vendor_id: {
+              type: 'string',
+              example: '660bceefa25c4f1234abcd12'
+            }
+          }
+        }
       }
-    }    
+    }
+     
   },
   apis: ['./*.js'], 
 };
